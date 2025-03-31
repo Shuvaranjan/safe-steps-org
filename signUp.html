@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe | Steps</title>
+    <link rel="stylesheet" href="CSS/signUp.css">
+    <!-- <script src="signUp.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <!-- Wrapper for the form -->
+    <div class="wrapper">
+        <div class="close_panel">
+            <a href="signIn.html"><button class="close"><i class="fa-solid fa-xmark"></i></button></a>
+        </div>
+        <form method="POST"  onsubmit="redirectToProfile(event)">
+            <h1>Sign up</h1>
+            <div class="input-box">
+                <input type="email" name="Email" id="user" placeholder="Email" autocomplete="off" required>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" name="Fullname" id="fname" placeholder="Full Name" autocomplete="off" required>
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="number" name="Ph" id="ph" placeholder="Mobile Number" autocomplete="off" required>
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="pass" id="pass" placeholder="Password" required>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="confirmPass" id="confirmPass" placeholder="Confirm Password" required>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="remember-forget">
+                <label for="agree"><input type="checkbox" name="agree" id="agree">Remember me</label>
+                <!-- <label>
+                    <a href="#">Forget Password</a>
+                </label> -->
+            </div>
+            <button type="submit" class="btn" name="submit" btnOnClick="btn()">Sign up</button>
+
+            <div class="register-link">
+                <p>Already have an account? <a href="signIn.html">Sign in</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // const scriptURL = 'https://script.google.com/macros/s/AKfycbz1uMQ5wmkIWleJ9CZhWrlZ1Y2cJRyEyBEOzToy6BkEp6XnhxVUPApl-JAqxl-8yxVU/exec'
+        // const form = document.forms['google-sheet']
+      
+        // form.addEventListener('submit', e => {
+        //   e.preventDefault()
+        //   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        //     .then(response => alert("Account created Successfully...\nWelcome to Safe Steps"))
+        //     .catch(error => console.error('Error!', error.message))
+        // })
+
+
+        // function redirectToProfile(event) {
+        //     event.preventDefault(); // Prevent form submission
+        //     // Add your logic here (e.g., validate input, send OTP, etc.)
+        //     window.location.href = "signIn.html"; // Redirect to the desired page
+        // }
+        function redirectToProfile(event) {
+    event.preventDefault(); // Prevent form submission
+    // Add your logic here (e.g., validate input, send OTP, etc.)
+    window.location.href = "signup.html"; // Redirect to the desired page
+}
+      </script>
+
+
+</body>
+
+</html>

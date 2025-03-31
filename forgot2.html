@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe | Steps</title>
+    <link rel="stylesheet" href="CSS/signIn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video" preload="auto">
+            <source src="./assests/videos/hands.mp4" type="video/mp4">
+            <!-- Your browser does not support the video  -->
+        </video>
+    </div>
+   
+
+    <!-- Wrapper for the form -->
+    <div class="wrapper">
+        <div class="close_panel">
+            <a href="index.html"><button class="close"><i class="fa-solid fa-xmark"></i></button></a>
+        </div>
+        <form action="" method="post" onsubmit="redirectToProfile(event)">
+            <h1>Reset Password</h1>
+            <div class="input-box">
+                <input type="email" name="user" id="user" value="xyz@gmail.com" size="11" readonly>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="pass" id="pass" placeholder="Enter New Password" required>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="re-pass" id="re-pass" placeholder="Re-Enter New Password" required>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="remember-forget">
+                <label for="agree"><input type="checkbox" name="agree" id="agree" checked>Remember me</label>
+            </div>
+           <a href="signIn.html"> <button type="submit" class="btn">Reset</button></a>
+
+           
+        </form>
+    </div>
+
+    <script src="JavaScript/signIn.js"></script>
+    <script>
+        function redirectToProfile(event) {
+            event.preventDefault(); // Prevent form submission
+            // Add your logic here (e.g., validate input, send OTP, etc.)
+            window.location.href = "signIn.html"; // Redirect to the desired page
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

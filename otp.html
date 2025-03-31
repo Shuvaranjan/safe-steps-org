@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe-Steps</title>
+    <link rel="stylesheet" href="CSS/otp.css">
+    <script src="JavaScript/otp.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video" preload="auto">
+            <source src="./assests/videos/hands.mp4" type="video/mp4">
+            <!-- Your browser does not support the video  -->
+        </video>
+    </div>
+   
+
+    <!-- Wrapper for the form -->
+    <div class="wrapper">
+        <div class="close_panel">
+            <a href="signIn.html"><button class="close"><i class="fa-solid fa-xmark"></i></button></a>
+        </div>
+        <form action="#"  class="otp-field" onsubmit="redirectToProfile(event)">
+            <h1>ENTER OTP</h1>
+            <p>We have send sent a verification code of your registered Email xyz@gmail.com</p>
+            <div class="input-box">
+                <input type="number" maxlength="1" >
+                <input type="number" maxlength="1" disabled>
+                <input type="number" maxlength="1" disabled id="space">
+                <input type="number" maxlength="1" disabled>
+                <input type="number" maxlength="1" disabled>
+                <input type="number" maxlength="1" disabled>
+                <!-- <i class="fa-solid fa-envelope"></i> -->
+            </div>
+
+            
+            <a href="forgot2.html"><button type="submit" onclick="showAlert()">Verify OTP</button></a>
+            <a href="#"><button type="submit" id="resend">Resend</button></a>
+            
+        </form>
+    </div>
+
+    <script>
+        function redirectToProfile(event) {
+            event.preventDefault(); // Prevent form submission
+            // Add your logic here (e.g., validate input, send OTP, etc.)
+            window.location.href = "forgot2.html"; // Redirect to the desired page
+        }
+    </script>
+
+    <!-- <script>
+        function redirectToProfile(event) {
+            event.preventDefault(); // Prevent form submission
+            // Add your logic here (e.g., validate input, send OTP, etc.)
+            window.location.href = "index.html"; // Redirect to the desired page
+        }
+    </script> -->
+
+
+</body>
+
+</html>

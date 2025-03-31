@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe-Steps | Change Password</title>
+    <link rel="stylesheet" href="CSS/signIn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video" preload="auto">
+            <source src="./assests/videos/hands.mp4" type="video/mp4">
+            <!-- Your browser does not support the video  -->
+        </video>
+    </div>
+   
+
+    <!-- Wrapper for the form -->
+    <div class="wrapper">
+        <div class="close_panel">
+            <a href="signIn.html"><button class="close"><i class="fa-solid fa-xmark"></i></button></a>
+        </div>
+        <form action="" method="post" onsubmit="redirectToProfile(event)">
+            <h1>Forget Password</h1>
+            <div class="input-box">
+                <input type="email" name="user" id="user" placeholder="Enter Email" >
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <a href="otp.html"><button type="submit" class="btn">Get Otp</button></a>
+        </form>
+    </div>
+     
+    <script src="JavaScript/signIn.js"></script>
+    <script>
+        function redirectToProfile(event) {
+            event.preventDefault(); // Prevent form submission
+            // Add your logic here (e.g., validate input, send OTP, etc.)
+            window.location.href = "otp.html"; // Redirect to the desired page
+        }
+    </script>
+
+
+</body>
+
+</html>

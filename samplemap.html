@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Ride</title>
+  <link rel="stylesheet" href="styles0.css">
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=initMap" async defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Book a Ride</h1>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Search Fields -->
+    <div class="search-fields">
+      <input type="text" id="pickupLocation" placeholder="Enter pickup location">
+      <input type="text" id="dropLocation" placeholder="Enter drop location">
+      <button id="bookRide">Book Ride</button>
+    </div>
+
+    <!-- Confirm Arrival Button -->
+    <button id="confirmArrival" class="hidden">Confirm Arrival</button>
+
+    <!-- Confirmation Messages -->
+    <p id="rideBookedMessage" class="hidden">Your ride has been booked! You will arrive shortly.</p>
+    <p id="arrivalConfirmationMessage" class="hidden">Thank you for confirming your safe arrival!</p>
+  </div>
+
+  <script>
+    // Initialize Map
+function initMap() {
+    const map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: -34.397, lng: 150.644 }, // Default center
+      zoom: 8,
+    });
+  
+    // Autocomplete for Pickup and Drop Locations
+    const pickupInput = document.getElementById('pickupLocation');
+    const dropInput = document.getElementById('dropLocation');
+  
+    const pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput);
+    const dropAutocomplete = new google.maps.places.Autocomplete(dropInput);
+  
+    // Book Ride Button
+    document.getElementById('bookRide').addEventListener('click', () => {
+      const pickupLocation = pickupInput.value;
+      const dropLocation = dropInput.value;
+  
+      if (pickupLocation && dropLocation) {
+        // Simulate ride booking
+        document.getElementById('rideBookedMessage').classList.remove('hidden');
+        document.getElementById('bookRide').disabled = true;
+  
+        // Simulate ride completion after 5 seconds
+        setTimeout(() => {
+          document.getElementById('confirmArrival').classList.remove('hidden');
+        }, 5000); // 5 seconds delay
+      } else {
+        alert('Please enter both pickup and drop locations.');
+      }
+    });
+  
+    // Confirm Arrival Button
+    document.getElementById('confirmArrival').addEventListener('click', () => {
+      if (confirm('Have you arrived safely at your destination?')) {
+        document.getElementById('arrivalConfirmationMessage').classList.remove('hidden');
+        document.getElementById('confirmArrival').classList.add('hidden');
+      }
+    });
+  }
+  </script>
+</body>
+</html>

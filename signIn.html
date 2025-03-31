@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe | Steps</title>
+    <link rel="stylesheet" href="CSS/signIn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video" preload="auto">
+            <source src="./assests/videos/hands.mp4" type="video/mp4">
+            <!-- Your browser does not support the video  -->
+        </video>
+    </div>
+   
+
+    <!-- Wrapper for the form -->
+    <div class="wrapper">
+        <div class="close_panel">
+            <a href="index.html"><button class="close"><i class="fa-solid fa-xmark"></i></button></a>
+        </div>
+        <form method="POST">
+            <h1>Sign in</h1>
+            <div class="input-box">
+                <input type="email" name="user" id="user" placeholder="Enter Email" autocomplete="off" required>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="pass" id="pass" placeholder="Enter Password" required>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="remember-forget">
+                <label for="agree"><input type="checkbox" name="agree" id="agree" checked>Remember me</label>
+                <label>
+                    <a href="forget1.html">Forget Password</a>
+                </label>
+            </div>
+            <a href="main.html"><button type="submit" class="btn" onclick="showAlert()">Sign in</button>
+            </a>
+            <div class="register-link">
+                <p>Don't have an account? <a href="signUp.html">Sign up</a></p>
+            </div>
+
+
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <div class="or-divider">
+                    <hr>
+                    <span>or sign in with</span>
+                    <hr>
+                </div>
+                <div class="icons">
+                    <a href="#" class="social-icon" id="icn1"><i class="fab fa-google"></i></a>
+                    <a href="#" class="social-icon" id="icn2"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon" id="icn3"><i class="fab fa-apple"></i></a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="JavaScript/signIn.js"></script>
+
+
+</body>
+
+</html>

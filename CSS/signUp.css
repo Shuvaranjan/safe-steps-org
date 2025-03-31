@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-image: url('/assests/images/sign_up.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    /* backdrop-filter: blur(50%); */
+}
+
+
+
+/* Wrapper Styling */
+.wrapper {
+    width: 90%; /* Responsive width */
+    max-width: 500px; /* Maximum width */
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 50px; /* Reduced padding for smaller screens */
+    position: relative;
+    z-index: 1; /* Ensure it stays above the video */
+    animation: fadeIn 1s ease-in-out;
+}
+/* Close Button Styling */
+.close_panel {
+    display: inline-block;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.close_panel .close {
+    background-color: #ffffff;
+    width: 40px; /* Smaller size for mobile */
+    height: 40px; /* Smaller size for mobile */
+    border: none;
+    outline: none;
+    border-radius: 50% 25%;
+    cursor: pointer;
+    font-size: 18px; /* Smaller font size for mobile */
+}
+
+.close_panel:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wrapper h1 {
+    font-size: 28px; /* Smaller font size for mobile */
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0; /* Reduced margin for smaller screens */
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 14px; /* Smaller font size for mobile */
+    color: #fff;
+    padding: 15px 40px 15px 15px; /* Reduced padding for smaller screens */
+    transition: all 0.3s ease-in-out;
+}
+
+.input-box input::-webkit-inner-spin-button,
+.input-box input::-webkit-outer-spin-button{
+    display: none;
+}
+
+
+.input-box input:focus {
+    border-color: #fff;
+    transform: scale(1.02);
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box i {
+    position: absolute;
+    right: 15px; /* Adjusted position for smaller screens */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px; /* Smaller icon size for mobile */
+}
+
+.wrapper .remember-forget {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px; /* Smaller font size for mobile */
+    margin: -10px 0 10px; /* Reduced margin for smaller screens */
+}
+
+.remember-forget label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forget a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forget a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+.wrapper .btn:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+.wrapper .btn:active {
+    background: #949393;
+    transform: scale(1);
+}
+
+
+.wrapper .register-link {
+    font-size: 12px; /* Smaller font size for mobile */
+    text-align: center;
+    margin: 15px 0 10px; /* Reduced margin for smaller screens */
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 100%; /* Wider on smaller screens */
+        padding: 15px; /* Reduced padding */
+    }
+
+    .wrapper h1 {
+        font-size: 24px; /* Smaller font size for tablets */
+    }
+
+    .input-box input {
+        font-size: 14px; /* Smaller font size for tablets */
+    }
+
+    .input-box i {
+        font-size: 16px; /* Smaller icon size for tablets */
+    }
+
+    .remember-forget {
+        font-size: 12px; /* Smaller font size for tablets */
+    }
+
+    .register-link {
+        font-size: 12px; /* Smaller font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        width: 90%; /* Full width on mobile */
+        padding: 10px; /* Minimal padding */
+    }
+
+    .wrapper h1 {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    .input-box input {
+        font-size: 12px; /* Smaller font size for mobile */
+    }
+
+    .input-box i {
+        font-size: 14px; /* Smaller icon size for mobile */
+    }
+
+    .remember-forget {
+        font-size: 10px; /* Smaller font size for mobile */
+    }
+
+    .register-link {
+        font-size: 10px; /* Smaller font size for mobile */
+    }
+}
+
+
+
+
+
+
+
+
