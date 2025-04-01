@@ -8,11 +8,12 @@
     <!-- swiper css -->
     <link rel="stylesheet" href="CSS/swiper-bundle.min.css">
     <link rel="stylesheet" href="CSS/main.css">
+    <link rel="icon" href="./assests/images/Safe_step_logo_-removebg-preview.png">
 
     <!-- Add this to your head section -->
-<script src="https://maps.googleapis.com/maps/api/js?key=Bpp6zWWQKEKIj1EU9lrWoRfhBmPeFyuJlRZFrKb0&libraries=places"></script>
-
     
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -57,11 +58,6 @@
                 <p>john.doe@example.com</p>
             </div>
             <ul class="menu-btns">
-                <li><a href="#"><i class="fa-solid fa-user"></i> My Account</a></li>
-                <li><a href="#"><i class="fa-solid fa-gear"></i><select name="" id="">
-                            <option value="dark">Dark</option>
-                            <option value="light">Light</option>
-                        </select></a></li>
                 <li><a href="signIn.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
             </ul>
         </div>
@@ -225,7 +221,7 @@
                                 <span class="overlay"></span>
 
                                 <div class="card-image">
-                                    <img src="./assests/images/koyel.png" alt="load error!" class="card-img">
+                                    <img src="./assests/images/mondira.png" alt="load error!" class="card-img">
                                 </div>
                             </div>
 
@@ -339,46 +335,47 @@
             </div>
         </section>
 
-      <!------------------------------------- Book Ride ------------------------------------------->
-<section id="ride_booking">
-    <h2 class="book-ride-title">Book Ride</h2>
-    <div class="container">
-        <div class="booking-container">
-            <div class="title">
-                <i class="fa-solid fa-taxi"></i>
-                <h1>Safe-Steps Ride Booking</h1>
-            </div>
+        <!------------------------------------- Book Ride ------------------------------------------->
+        <section id="ride_booking">
+            <h2 class="book-ride-title">Book Ride</h2>
+            <div class="container">
+                <div class="booking-container">
+                    <div class="title">
+                        <i class="fa-solid fa-taxi"></i>
+                        <h1>Safe-Steps Ride Booking</h1>
+                    </div>
 
-            <!-- Search Fields -->
-            <div class="search-fields">
-                <label for="pickupLocation">From</label>
-                <input type="text" id="pickupLocation" placeholder="Enter pickup location">
-                <label for="dropLocation">To</label>
-                <input type="text" id="dropLocation" placeholder="Enter drop location">
-                
-                <div class="ride-details hidden" id="rideDetails">
-                    <p>Estimated Distance: <span id="distance"></span></p>
-                    <p>Estimated Duration: <span id="duration"></span></p>
-                    <p>Approximate Fare: <span id="fare"></span></p>
+                    <!-- Search Fields -->
+                    <div class="search-fields">
+                        <label for="pickupLocation">From</label>
+                        <input type="text" id="pickupLocation" placeholder="Enter pickup location">
+                        <label for="dropLocation">To</label>
+                        <input type="text" id="dropLocation" placeholder="Enter drop location">
+
+                        <div class="ride-details hidden" id="rideDetails">
+                            <p>Estimated Distance: <span id="distance"></span></p>
+                            <p>Estimated Duration: <span id="duration"></span></p>
+                            <p>Approximate Fare: <span id="fare"></span></p>
+                        </div>
+
+                        <button id="calculateRoute">Calculate Route</button>
+                        <button id="bookRide" class="hidden">Confirm Booking</button>
+                    </div>
+
+                    <!-- Confirmation Messages -->
+                    <div id="confirmationMessages">
+                        <p id="rideBookedMessage" class="hidden">Your ride has been booked! You will arrive shortly.</p>
+                        <p id="arrivalConfirmationMessage" class="hidden">Safe-Steps, 😊Thank you for confirming your
+                            safe arrival!</p>
+                    </div>
                 </div>
-                
-                <button id="calculateRoute">Calculate Route</button>
-                <button id="bookRide" class="hidden">Confirm Booking</button>
-            </div>
 
-            <!-- Confirmation Messages -->
-            <div id="confirmationMessages">
-                <p id="rideBookedMessage" class="hidden">Your ride has been booked! You will arrive shortly.</p>
-                <p id="arrivalConfirmationMessage" class="hidden">Safe-Steps, 😊Thank you for confirming your safe arrival!</p>
+                <div class="mapView">
+                    <div id="map"></div>
+                    <h3>Safe-Steps Map</h3>
+                </div>
             </div>
-        </div>
-
-        <div class="mapView">
-            <div id="map"></div>
-            <h3>Safe-Steps Map</h3>
-        </div>
-    </div>
-</section>
+        </section>
     </main>
 
 
@@ -464,136 +461,167 @@
         </div>
         </div>
     </footer>
-
+    <script src="./JavaScript/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".slide_content", {
-    slidesPerView: 3,
-    spaceBetween: 25,
-    // slidesPerGroup: 2,
-    loop: false,
-    centerSlide: 'true',
-    fade: 'true',
-    grabCursor: 'true',
-    // loopFillGroupWithBlank: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    breakpoints:{
-        0: {
-            slidesPerView: 1,
-        },
-        520: {
-            slidesPerView: 2,
-        },
-        950: {
             slidesPerView: 3,
+            spaceBetween: 25,
+            // slidesPerGroup: 2,
+            loop: false,
+            centerSlide: 'true',
+            fade: 'true',
+            grabCursor: 'true',
+            // loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                520: {
+                    slidesPerView: 2,
+                },
+                950: {
+                    slidesPerView: 3,
+                }
+            },
+        });
+
+        // Initialize the map and services
+        let map;
+        let directionsService;
+        let directionsRenderer;
+        let autocompletePickup;
+        let autocompleteDrop;
+
+        function initMap() {
+            // Initialize the map
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 22.5726, lng: 88.3639 }, // Default to Kolkata
+                zoom: 12,
+            });
+
+            // Initialize services
+            directionsService = new google.maps.DirectionsService();
+            directionsRenderer = new google.maps.DirectionsRenderer();
+            directionsRenderer.setMap(map);
+
+            // Initialize autocomplete for pickup and drop locations
+            autocompletePickup = new google.maps.places.Autocomplete(
+                document.getElementById("pickupLocation"),
+                { types: ["geocode"] }
+            );
+
+            autocompleteDrop = new google.maps.places.Autocomplete(
+                document.getElementById("dropLocation"),
+                { types: ["geocode"] }
+            );
+
+            // Event listeners
+            document.getElementById("calculateRoute").addEventListener("click", calculateAndDisplayRoute);
+            document.getElementById("bookRide").addEventListener("click", bookRide);
         }
-    },
-  });
 
-// Initialize the map and services
-let map;
-let directionsService;
-let directionsRenderer;
-let autocompletePickup;
-let autocompleteDrop;
+        function calculateAndDisplayRoute() {
+            const pickup = document.getElementById("pickupLocation").value;
+            const drop = document.getElementById("dropLocation").value;
 
-function initMap() {
-    // Initialize the map
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 22.5726, lng: 88.3639 }, // Default to Kolkata
-        zoom: 12,
-    });
-    
-    // Initialize services
-    directionsService = new google.maps.DirectionsService();
-    directionsRenderer = new google.maps.DirectionsRenderer();
-    directionsRenderer.setMap(map);
-    
-    // Initialize autocomplete for pickup and drop locations
-    autocompletePickup = new google.maps.places.Autocomplete(
-        document.getElementById("pickupLocation"),
-        { types: ["geocode"] }
-    );
-    
-    autocompleteDrop = new google.maps.places.Autocomplete(
-        document.getElementById("dropLocation"),
-        { types: ["geocode"] }
-    );
-    
-    // Event listeners
-    document.getElementById("calculateRoute").addEventListener("click", calculateAndDisplayRoute);
-    document.getElementById("bookRide").addEventListener("click", bookRide);
-}
+            if (!pickup || !drop) {
+                alert("Please enter both pickup and drop locations");
+                return;
+            }
 
-function calculateAndDisplayRoute() {
-    const pickup = document.getElementById("pickupLocation").value;
-    const drop = document.getElementById("dropLocation").value;
-    
-    if (!pickup || !drop) {
-        alert("Please enter both pickup and drop locations");
-        return;
-    }
-    
-    directionsService.route(
-        {
-            origin: pickup,
-            destination: drop,
-            travelMode: google.maps.TravelMode.DRIVING,
-            unitSystem: google.maps.UnitSystem.METRIC,
-        },
-        (response, status) => {
-            if (status === "OK") {
-                directionsRenderer.setDirections(response);
-                
-                // Display route details
-                const route = response.routes[0];
-                const distance = route.legs[0].distance.text;
-                const duration = route.legs[0].duration.text;
-                
-                // Simple fare calculation (example: ₹10 per km)
-                const distanceKm = route.legs[0].distance.value / 1000;
-                const fare = Math.round(distanceKm * 10);
-                
-                document.getElementById("distance").textContent = distance;
-                document.getElementById("duration").textContent = duration;
-                document.getElementById("fare").textContent = `₹${fare}`;
-                
-                // Show details and booking button
-                document.getElementById("rideDetails").classList.remove("hidden");
-                document.getElementById("bookRide").classList.remove("hidden");
-                document.getElementById("calculateRoute").classList.add("hidden");
+            directionsService.route(
+                {
+                    origin: pickup,
+                    destination: drop,
+                    travelMode: google.maps.TravelMode.DRIVING,
+                    unitSystem: google.maps.UnitSystem.METRIC,
+                },
+                (response, status) => {
+                    if (status === "OK") {
+                        directionsRenderer.setDirections(response);
+
+                        // Display route details
+                        const route = response.routes[0];
+                        const distance = route.legs[0].distance.text;
+                        const duration = route.legs[0].duration.text;
+
+                        // Simple fare calculation (example: ₹10 per km)
+                        const distanceKm = route.legs[0].distance.value / 1000;
+                        const fare = Math.round(distanceKm * 10);
+
+                        document.getElementById("distance").textContent = distance;
+                        document.getElementById("duration").textContent = duration;
+                        document.getElementById("fare").textContent = `₹${fare}`;
+
+                        // Show details and booking button
+                        document.getElementById("rideDetails").classList.remove("hidden");
+                        document.getElementById("bookRide").classList.remove("hidden");
+                        document.getElementById("calculateRoute").classList.add("hidden");
+                    } else {
+                        alert("Directions request failed due to " + status);
+                    }
+                }
+            );
+        }
+
+        function bookRide() {
+            // In a real app, you would send this data to your backend
+            const pickup = document.getElementById("pickupLocation").value;
+            const drop = document.getElementById("dropLocation").value;
+            const fare = document.getElementById("fare").textContent;
+
+            // Show confirmation
+            document.getElementById("rideBookedMessage").classList.remove("hidden");
+            document.getElementById("bookRide").classList.add("hidden");
+
+            // You would typically:
+            // 1. Send booking request to your backend
+            // 2. Connect with OLA API to actually book the ride
+            // 3. Handle the response
+        }
+
+        // Initialize the map when the window loads
+        window.initMap = initMap;
+
+
+
+
+
+
+
+
+
+
+
+        //   window.addEventListener('scroll', function() {
+        //     const header = document.querySelector('.header');
+        //     if (window.scrollY > 50) { // Adjust the scroll threshold as needed
+        //         header.classList.add('scrolled');
+        //     } else {
+        //         header.classList.remove('scrolled');
+        //     }
+        // });
+
+        var themeMode = document.getElementById("themeMode")
+        themeMode.onclick = function () {
+            document.body.classList.toggle("light-theme");
+            if (document.body.classList.contains("light-theme")) {
+                themeMode.classList.remove("fa-sun");
+                themeMode.classList.add("fa-moon");
             } else {
-                alert("Directions request failed due to " + status);
+                themeMode.classList.remove("fa-moon");
+                themeMode.classList.add("fa-sun");
             }
         }
-    );
-}
-
-function bookRide() {
-    // In a real app, you would send this data to your backend
-    const pickup = document.getElementById("pickupLocation").value;
-    const drop = document.getElementById("dropLocation").value;
-    const fare = document.getElementById("fare").textContent;
-    
-    // Show confirmation
-    document.getElementById("rideBookedMessage").classList.remove("hidden");
-    document.getElementById("bookRide").classList.add("hidden");
-    
-    // You would typically:
-    // 1. Send booking request to your backend
-    // 2. Connect with OLA API to actually book the ride
-    // 3. Handle the response
-}
-
-// Initialize the map when the window loads
-window.initMap = initMap;
 
 
 
@@ -605,40 +633,9 @@ window.initMap = initMap;
 
 
 
-//   window.addEventListener('scroll', function() {
-//     const header = document.querySelector('.header');
-//     if (window.scrollY > 50) { // Adjust the scroll threshold as needed
-//         header.classList.add('scrolled');
-//     } else {
-//         header.classList.remove('scrolled');
-//     }
-// });
-
-    var themeMode = document.getElementById("themeMode")
-    themeMode.onclick = function(){
-    document.body.classList.toggle("light-theme");
-     if (document.body.classList.contains("light-theme")) {
-        themeMode.classList.remove("fa-sun");
-        themeMode.classList.add("fa-moon");
-    } else {
-        themeMode.classList.remove("fa-moon");
-        themeMode.classList.add("fa-sun");
-    }
-    }
-
-
-
-
-
-
-
-
-
-
-
-    // map
-         // Initialize Map
-         function initMap() {
+        // map
+        // Initialize Map
+        function initMap() {
             const map = new google.maps.Map(document.getElementById('map'), {
                 center: { lat: -34.397, lng: 150.644 }, // Default center
                 zoom: 8,
@@ -678,70 +675,6 @@ window.initMap = initMap;
                 }
             });
         }
-   
-
-
-
-
-
-
-
-
-          // JavaScript to handle side menu toggle
-       const profileLink = document.getElementById('profileLink');
-       const sideMenu = document.getElementById('sideMenu');
-       const closeMenu = document.getElementById('closeMenu');
-       const backdrop = document.getElementById('backdrop');
-
-       // Open side menu when Profile link is clicked
-       profileLink.addEventListener('click', (e) => {
-           e.preventDefault(); // Prevent default link behavior
-           sideMenu.classList.add('active');
-           backdrop.classList.add('active');
-       });
-
-       // Close side menu when close button is clicked
-       closeMenu.addEventListener('click', () => {
-           sideMenu.classList.remove('active');
-           backdrop.classList.remove('active');
-       });
-
-       // Close side menu when clicking outside of it
-       backdrop.addEventListener('click', () => {
-           sideMenu.classList.remove('active');
-           backdrop.classList.remove('active');
-       });
-
-
-
-
-
-
-
-
-    //    mail authenticate
-    const form = document.querySelector("form");
-    
-    function sendMail(){
-        Email.send({
-            Host : "s1.maildns.net",
-            Username : "shuvaranjan000@gmail.com",
-            Password : "8921C43986988F04EC5403FF21FA60407682",
-            To : 'shuvaranjan000@gmail.com',
-            From : "shuvaranjan000@gmail.com",
-            Subject : "This is the subject",
-            Body : "And this is the body"
-        }).then(
-          message => alert(message)
-        );
-    }
-
-
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        sendMail();
-    });
 
 
 
@@ -751,11 +684,75 @@ window.initMap = initMap;
 
 
 
+        // JavaScript to handle side menu toggle
+        const profileLink = document.getElementById('profileLink');
+        const sideMenu = document.getElementById('sideMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const backdrop = document.getElementById('backdrop');
+
+        // Open side menu when Profile link is clicked
+        profileLink.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            sideMenu.classList.add('active');
+            backdrop.classList.add('active');
+        });
+
+        // Close side menu when close button is clicked
+        closeMenu.addEventListener('click', () => {
+            sideMenu.classList.remove('active');
+            backdrop.classList.remove('active');
+        });
+
+        // Close side menu when clicking outside of it
+        backdrop.addEventListener('click', () => {
+            sideMenu.classList.remove('active');
+            backdrop.classList.remove('active');
+        });
 
 
 
 
-  
+
+
+
+
+        //    mail authenticate
+        const form = document.querySelector("form");
+
+        function sendMail() {
+            Email.send({
+                Host: "s1.maildns.net",
+                Username: "shuvaranjan000@gmail.com",
+                Password: "8921C43986988F04EC5403FF21FA60407682",
+                To: 'shuvaranjan000@gmail.com',
+                From: "shuvaranjan000@gmail.com",
+                Subject: "This is the subject",
+                Body: "And this is the body"
+            }).then(
+                message => alert(message)
+            );
+        }
+
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            sendMail();
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
