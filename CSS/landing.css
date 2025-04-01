@@ -22,28 +22,6 @@ body {
     overflow: hidden;
     /* backdrop-filter: blur(50%); */
 }
-.video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-    background: #000; /* Fallback background color */
-}
-
-#bg-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    opacity: 0; /* Start with video hidden */
-    transition: opacity 1s ease-in-out; /* Smooth transition */
-}
 
 /* Wrapper Styling */
 
@@ -256,29 +234,3 @@ button.slide-out {
 
 
 
-
-/* Hide the default cursor */
-body {
-    /* cursor: none; */
-}
-
-/* Mouse Follower Styling */
-#mouse-follower {
-    position: fixed;
-    width: 20px; /* Size of the follower */
-    height: 20px;
-    background-color: rgba(245, 245, 245, 0.539); /* Color of the follower */
-    border-radius: 50%; /* Make it circular */
-    pointer-events: none; /* Ensure it doesn't interfere with mouse events */
-    backdrop-filter: blur(2px);
-    transform: translate(-50%, -50%); /* Center the follower on the cursor */
-    transition: transform 0.1s ease-out; /* Smooth movement */
-    z-index: 1000; /* Ensure it's above other content */
-    box-shadow: 0 0 5px #939393, 0 0 20px #131313;
-    /* filter: drop-shadow(0 0 5px 5px red); */
-    transition: transform 0.05s ease-out;
-}
-
-#mouse-follower:hover {
-    transform: translate(-50%, -50%) scale(1.5);
-}
