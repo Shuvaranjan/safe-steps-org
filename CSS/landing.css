@@ -10,7 +10,7 @@
 
 /* Video Background Styling */
 body {
-    background-image: url('assests/images/dark.png');
+    background-image: url('./assests/images/dark.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
